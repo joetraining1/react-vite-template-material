@@ -1,0 +1,15 @@
+export const AllColors = {
+  GlossNavy: "#23395B",
+  Navy: "#12355B",
+  OffWhite: "#F5F0F6",
+  GreenDoff: "#1E555C",
+  OrangeDoff: "#FF6700",
+  Green: "#09814A",
+  Purple: "#662C91",
+  OffGrey: "#494949",
+  Yellow: "#FFE548",
+  DarkGrey: "#1E2D2F",
+  Grey: "#5E6572",
+  GreyScale: "#353535",
+  GreyDoff: "#636564",
+};
