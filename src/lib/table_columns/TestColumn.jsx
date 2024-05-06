@@ -1,15 +1,8 @@
 import { useMemo } from "react";
-import * as Section from "../parts/SectionHeader/SectionHeader";
-import UniversalButton from "../parts/UniversalButton/UniversalButton";
-import UtilityModal from "../../components/modal/UtilityModal";
-
 import React from "react";
-import useModalState from "../../hooks/useModalState";
 import IndexModal from "../../components/modal/IndexModal";
 
-const TestColumn = () => {
-  const { MountModal, UnMountModal, modalState } = useModalState();
-
+const TestColumn = (data) => {
   const TryColumn = useMemo(() => {
     return [
       {
@@ -47,7 +40,8 @@ const TestColumn = () => {
         },
       },
     ];
-  }, []);
+  }, [data]);
+
   return {
     TryColumn,
   };

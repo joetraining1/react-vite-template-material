@@ -6,13 +6,14 @@ import * as Section from "../lib/parts/SectionHeader/SectionHeader";
 import TableData from "../components/TableData/TableData";
 import { TestRows } from "../lib/constant/DummyData";
 import TestColumn from "../lib/table_columns/TestColumn";
-("../lib/table_columns/TestColumn");
+import useValueChanges from "../hooks/useValueChanges";
+import { TextField } from "@mui/material";
+import TopBar from "../components/TopBar/TopBar";
 
 const Welcome = () => {
   //this page is dedicated to facilitate prototypes
-
-  const { MountModal, UnMountModal, modalState } = useModalState();
-  const { TryColumn } = TestColumn();
+  const { setValue, value } = useValueChanges();
+  const { TryColumn } = TestColumn(TestRows);
 
   return (
     <div
@@ -26,7 +27,14 @@ const Welcome = () => {
         gap: "10px",
       }}
     >
+      <TopBar />
       <Section.SectionContainer>
+        {value}
+        <TextField
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          size="small"
+        />
         <Section.default
           title={"Welcome!"}
           value={"This page is dedicated for prototypes."}
